@@ -31,7 +31,11 @@ print(name+": Dude not cool.")
 print("Guard 1: Cry about it.")
 print("Benard: Please don't make a scene and try to colect all of the pices of paper.")
 print(name+": Well that just what I'm going to do. (You continue to climb to the roof and jump through a sun light.)")
-room1 = input("You find a")
+room1 = input("You find a the first piece of paper with the lyrics on it. Do you wan't to pick it up? Y or N?: ")
+if room1 == "N":
+     print("You literaly commited breaking and enterning to get your song back. But it's ok you can just ingnorat you little menis.")
+elif room1 == "Y":
+     print("Okay you collected your first piece of paper it says ' ")
 def damagep1():
         global herohp
         global herodp
