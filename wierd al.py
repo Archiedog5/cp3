@@ -5,6 +5,8 @@ p2dp=15
 p2hp=75
 herohp=50
 herodp=5
+pieces=0
+ifkey="No"
 print("Welcome to Wierd Al Yankovic The Game.")
 doYouWantToPlay = input(" Do you want to play? If so press 1. (Anything else is the wrong answer):")
 while doYouWantToPlay !="1":
@@ -33,9 +35,15 @@ print("Benard: Please don't make a scene and try to colect all of the pices of p
 print(name+": Well that just what I'm going to do. (You continue to climb to the roof and jump through a sun light.)")
 room1 = input("You find a the first piece of paper with the lyrics on it. Do you wan't to pick it up? Y or N?: ")
 if room1 == "N":
-     print("You literaly commited breaking and enterning to get your song back. But it's ok you can just ingnorat you little menis.")
+     print("You literaly commited breaking and enterning to get your song back. But it's ok you can just ingnor it. You little menis.")
 elif room1 == "Y":
-     print("Okay you collected your first piece of paper it says ' ")
+     print("You collected your first piece of paper it says 'To the town of Agua Fria rode a stranger one fine dayHardly spoke to folks around him, didn't have too much to sayNo one dared to ask his business, no one dared to make a slipFor the stranger there among them had a big iron on his' ")
+     print("Good job. Only 8 more pieces to go.")
+     global pieces 
+     pieces+=1
+hallwayLorR = input("Now you are here do you want to go to left or right?(1 for left, 2 for right): ")
+if hallwayLorR ==  "2" and ifkey == "Yes":
+     pass     
 def damagep1():
         global herohp
         global herodp
@@ -135,3 +143,4 @@ def combatP2():
 
         elif p2hp<=0:
              print("You deafected the guard.")
+             
