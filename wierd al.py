@@ -43,7 +43,17 @@ elif room1 == "Y":
      pieces+=1
 hallwayLorR = input("Now you are here do you want to go to left or right?(1 for left, 2 for right): ")
 if hallwayLorR ==  "2" and ifkey == "Yes":
-     pass     
+     pass 
+elif hallwayLorR == "2" and ifkey == "Yes":
+    print("This door is locked, try the other one.")
+elif hallwayLorR == "1":
+    room123 = input("You see three rooms, left right and center wich one do you want to go to?(1,2 and 3,): ")
+    if room123 = "3":
+        print( "You see a gaurd, fight!!!")
+        print("Defence works by gussing how much thier going to damage you. Then it gets the absolute value of thier actul damage - your guess.)
+        print("Offence works the same but your gussing your dmg.")
+        comabtP1()
+              
 def damagep1():
         global herohp
         global herodp
