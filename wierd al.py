@@ -253,12 +253,12 @@ elif hallwayLorR == "1":
         comabtP1()
         pieces+=1
         print("You scavange the nocked out gaurd and you find your secound piece of paper. And it says'941'. The same guard also has a piece of paper that says 'big iron on his hip/ Big iron on his hip/ In this town there lived an outlaw by the name of Texas Red/ Many men had tried to take him and that many men were dead/ He was vicious and a killer though a youth of 24/ And the notches")
-    elif rooom123 == "2":
+    elif room123 == "2":
         print("You found another piece of paper and it says 'hip/ Big iron on his hip/ It was early in the morning when he rode into the town/ He came riding from the south side slowly lookin' all around/ He's an outlaw loose and running, came the whisper from each lip/ And he's here to do some business with the' ")
         pieces+=1
     elif room123 == "1":
         print("You see a chest in the center of the room. But it requires a code. What is the code?;")
-        chestcode=int("Whats the code to the chest?: ")
+        chestcode=int(input("Whats the code to the chest?: "))
         if chestcode==941:
             print("You find two things a key too the right hallway and a potion that increases your dmg by 10 points")
             ifkey="yes"
@@ -268,7 +268,7 @@ elif hallwayLorR == "1":
                 print("wrong")
                 leave=input("Do you want to leave or try again. 1 for leave and 2 to try agian.")
             room23=input("Now do you want to go to the center room or right room?: ")
-        if room23="2":
+        if room23=="2":
             print("You found another piece of paper and it says 'hip/ Big iron on his hip/ It was early in the morning when he rode into the town/ He came riding from the south side slowly lookin' all around/ He's an outlaw loose and running, came the whisper from each lip/ And he's here to do some business with the' ")
             pieces+=1
         elif room23=="3":
@@ -278,6 +278,7 @@ elif hallwayLorR == "1":
         comabtP1()
         pieces+=1
         print("You scavange the nocked out gaurd and you find your secound piece of paper. And it says'941'. The same guard also has a piece of paper that says 'big iron on his hip/ Big iron on his hip/ In this town there lived an outlaw by the name of Texas Red/ Many men had tried to take him and that many men were dead/ He was vicious and a killer though a youth of 24/ And the notches")
+        
 
 
         
