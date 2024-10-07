@@ -7,15 +7,16 @@ herohp=50
 herodp=5
 pieces=0
 ifkey="No"
+chestcode=0
 def damagep1():
-        global herohp
-        global herodp
-        global p1dp
-        dmg=random.randint(1,10)
-        dmgr=int(input("Guess a number 1-10 for thier dmg: "))
-        given = abs(dmg-dmgr)
-        herohp-=given
-        print("Your stats are now Health:",herohp,"Damage:",herodp)
+    global herohp
+    global herodp
+    global p1dp
+    dmg=random.randint(1,10)
+    dmgr=int(input("Guess a number 1-10 for thier dmg: "))
+    given = abs(dmg-dmgr)
+    herohp-=given
+    print("Your stats are now Health:",herohp,"Damage:",herodp)
 def fightp1():
     global p1hp
     global herodp
@@ -205,6 +206,46 @@ def combatP2():
 
         elif p2hp<=0:
              print("You deafected the guard.")
+def room3():
+    global pieces
+    print( "You see a gaurd, fight!!!")
+    print("Defence works by gussing how much thier going to damage you. Then it gets the absolute value of thier actul damage minus your guess.")
+    print("Offence works the same but your gussing your dmg.")
+    comabtP1()
+    pieces+=1
+    print("You scavange the nocked out gaurd and you find your secound piece of paper. And it says'941'. The same guard also has a piece of paper that says 'big iron on his hip/ Big iron on his hip/ In this town there lived an outlaw by the name of Texas Red/ Many men had tried to take him and that many men were dead/ He was vicious and a killer though a youth of 24/ And the notches")
+    room12=input("Now do you want to go to the left room or right room?")
+    if room12=="1":
+        room1()
+    elif room12 =="2":
+        room2()
+def room2():
+    global pieces
+    print("You found another piece of paper and it says 'hip/ Big iron on his hip/ It was early in the morning when he rode into the town/ He came riding from the south side slowly lookin' all around/ He's an outlaw loose and running, came the whisper from each lip/ And he's here to do some business with the' ")
+    pieces+=1
+    room13=input("Now do you want to go to the center room(3), or left room(1)?")
+    if room13 == "1":
+        room1()
+    elif room13== "3":
+        room3()
+def room1():
+    global ifkey
+    global chestcode
+    chestcode=input("You see a chest in the center of the room. And it asks you for a code to open. What's the code?: ")
+    if chestcode=="941":
+        print("You find two things a key too the right hallway and a potion that increases your dmg by 10 points")
+        ifkey="yes"
+    else:
+        leave=0
+        while chestcode!="941" and leave==1 :
+            print("wrong")
+            leave=input("Do you want to leave or try again. 1 for leave and 2 to try agian.")
+    room23=input("Now do you want to go to the center room(3) or right room(2)?: ")
+    if room23=="2":
+        room2()
+    elif room23=="3":
+        room3()
+     
 print("Welcome to Wierd Al Yankovic The Game.")
 doYouWantToPlay = input(" Do you want to play? If so press 1. (Anything else is the wrong answer):")
 while doYouWantToPlay !="1":
@@ -231,11 +272,11 @@ print(name+": Dude not cool.")
 print("Guard 1: Cry about it.")
 print("Benard: Please don't make a scene and try to colect all of the pices of paper.")
 print(name+": Well that just what I'm going to do. (You continue to climb to the roof and jump through a sun light.)")
-room1 = input("You find a the first piece of paper with the lyrics on it. Do you wan't to pick it up? Y or N?: ")
-if room1 == "N":
+room1dy = input("You find a the first piece of paper with the lyrics on it. Do you wan't to pick it up? y or n?: ")
+if room1dy == "n":
     print("You literaly commited breaking and enterning to get your song back. But it's ok you can just ingnor it. You little menis. You know what, nvm. YOU TOOK THE PIECE OF PAPER.")
     pieces+=1    
-elif room1 == "Y":
+elif room1dy == "y":
     print("You collected your first piece of paper it says 'To the town of Agua Fria rode a stranger one fine day/ Hardly spoke to folks around him, didn't have too much to say/ No one dared to ask his business, no one dared to make a slip/ For the stranger there among them had a big iron on his' ")
     print("Good job. Only 8 more pieces to go.") 
     pieces+=1
@@ -247,37 +288,11 @@ elif hallwayLorR == "2" and ifkey == "No":
 elif hallwayLorR == "1":
     room123 = input("You see three rooms, left right and center wich one do you want to go to?(1,2 and 3,): ")
     if room123 == "3":
-        print( "You see a gaurd, fight!!!")
-        print("Defence works by gussing how much thier going to damage you. Then it gets the absolute value of thier actul damage minus your guess.")
-        print("Offence works the same but your gussing your dmg.")
-        comabtP1()
-        pieces+=1
-        print("You scavange the nocked out gaurd and you find your secound piece of paper. And it says'941'. The same guard also has a piece of paper that says 'big iron on his hip/ Big iron on his hip/ In this town there lived an outlaw by the name of Texas Red/ Many men had tried to take him and that many men were dead/ He was vicious and a killer though a youth of 24/ And the notches")
+        room3()
     elif room123 == "2":
-        print("You found another piece of paper and it says 'hip/ Big iron on his hip/ It was early in the morning when he rode into the town/ He came riding from the south side slowly lookin' all around/ He's an outlaw loose and running, came the whisper from each lip/ And he's here to do some business with the' ")
-        pieces+=1
+        room2()
     elif room123 == "1":
-        print("You see a chest in the center of the room. But it requires a code. What is the code?;")
-        chestcode=int(input("Whats the code to the chest?: "))
-        if chestcode==941:
-            print("You find two things a key too the right hallway and a potion that increases your dmg by 10 points")
-            ifkey="yes"
-        else:
-            leave=0
-            while chestcode!=941 and leave=="1" :
-                print("wrong")
-                leave=input("Do you want to leave or try again. 1 for leave and 2 to try agian.")
-            room23=input("Now do you want to go to the center room or right room?: ")
-        if room23=="2":
-            print("You found another piece of paper and it says 'hip/ Big iron on his hip/ It was early in the morning when he rode into the town/ He came riding from the south side slowly lookin' all around/ He's an outlaw loose and running, came the whisper from each lip/ And he's here to do some business with the' ")
-            pieces+=1
-        elif room23=="3":
-                    print( "You see a gaurd, fight!!!")
-        print("Defence works by gussing how much thier going to damage you. Then it gets the absolute value of thier actul damage minus your guess.")
-        print("Offence works the same but your gussing your dmg.")
-        comabtP1()
-        pieces+=1
-        print("You scavange the nocked out gaurd and you find your secound piece of paper. And it says'941'. The same guard also has a piece of paper that says 'big iron on his hip/ Big iron on his hip/ In this town there lived an outlaw by the name of Texas Red/ Many men had tried to take him and that many men were dead/ He was vicious and a killer though a youth of 24/ And the notches")
+        room1()
         
 
 
