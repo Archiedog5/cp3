@@ -39,20 +39,26 @@ if room1 == "N":
 elif room1 == "Y":
      print("You collected your first piece of paper it says 'To the town of Agua Fria rode a stranger one fine dayHardly spoke to folks around him, didn't have too much to sayNo one dared to ask his business, no one dared to make a slipFor the stranger there among them had a big iron on his' ")
      print("Good job. Only 8 more pieces to go.")
-     global pieces 
      pieces+=1
-hallwayLorR = input("Now you are here do you want to go to left or right?(1 for left, 2 for right): ")
-if hallwayLorR ==  "2" and ifkey == "Yes":
-     pass     
+def hallwayLorR(ifkey):
+    global ifkey
+    dec = input("Now you are here do you want to go to left or right?(1 for left, 2 for right): ")
+    if dec ==  "2" and ifkey == "Yes":
+        pass
+    else:
+        print("The door is locked you need to find a key.")
+
+     
+         
 def damagep1():
-        global herohp
-        global herodp
-        global p1dp
-        dmg=random.randint(1,10)
-        dmgr=int(input("Guess a number 1-10 for thier dmg: "))
-        given = abs(dmg-dmgr)
-        herohp-=given
-        print("Your stats are now Health:",herohp,"Damage:",herodp)
+    global herohp
+    global herodp
+    global p1dp
+    dmg=random.randint(1,10)
+    dmgr=int(input("Guess a number 1-10 for thier dmg: "))
+    given = abs(dmg-dmgr)
+    herohp-=given
+    print("Your stats are now Health:",herohp,"Damage:",herodp)
 def fightp1():
     global p1hp
     global herodp
@@ -63,14 +69,14 @@ def fightp1():
     p1hp-=given
     print("Enimies stats are now Health:",p1hp,"Damage:",p1dp)
 def damagep2():
-        global herohp
-        global herodp
-        global p2dp
-        dmg=random.randint(1,10)
-        dmgr=int(input("Guess a number 1-15 for thier dmg: "))
-        given = abs(dmg-dmgr)
-        herohp-=given
-        print("Your stats are now Health:",herohp,"Damage:",herodp)
+    global herohp
+    global herodp
+    global p2dp
+    dmg=random.randint(1,10)
+    dmgr=int(input("Guess a number 1-15 for thier dmg: "))
+    given = abs(dmg-dmgr)
+    herohp-=given
+    print("Your stats are now Health:",herohp,"Damage:",herodp)
 def fightp2():
     global p2hp
     global herodp
