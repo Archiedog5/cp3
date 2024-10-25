@@ -1,7 +1,7 @@
 def add(numOne,numTwo):
     return numOne + numTwo
 
-def suv(numOne,numTwo):
+def sub(numOne,numTwo):
     return numOne - numTwo
 def mul(numOne,numTwo):
     return numOne * numTwo
