@@ -6,8 +6,12 @@ class movie:
         self.dircetor=dircetor
         self.genre=genre
         self.rating=rating
-    def __str__(self):
+    def __repr__(self):
         return f"Movie's title: {self.title} Date or realase: {self.dor} Director(s): {self.dircetor} Rating: {self.rating} Genre: {self.genre} Cast: {self.cast}"
+    @staticmethod
+    def __tsort__(tarr,title):
+        return tarr.sort()
+
 movie1=movie("The Shawshank Redemption",1994,"Frank Darabont","R","Drama","[Tim Robbins, Morgan Freeman]")
 movie2=movie("Pulp Fiction",1994,"Quentin Tarantino","R","Crime","[John Travolta, Uma Thurman, Samuel L. Jackson]")
 movie3=movie("The Godfather",1972,"Francis Ford Coppola","R","Crime","[Marlon Brando, Al Pacino, James Caan]")
@@ -28,3 +32,8 @@ movie17=movie("Jurassic Park",1993,"Steven Spielberg","PG-13","Adventure","[Sam 
 movie18=movie("The Departed",2006,"Martin Scorsese","R","Crime","[Leonardo DiCaprio, Matt Damon, Jack Nicholson]")
 movie19=movie("The Lion King",1994,"Roger Allers, Rob Minkoff","G","Animation","[Matthew Broderick, Jeremy Irons, James Earl Jones]")
 movie20=movie("Eternal Sunshine of the Spotless Mind",2004,"Michel Gondry","R","Romance","[Jim Carrey, Kate Winslet, Kirsten Dunst]")
+tarr = [movie1,movie2,movie3,movie4,movie5,movie6,movie7,movie8,movie9,movie10,movie11,movie12,movie13,movie14,movie15,movie16,movie17,movie18,movie19,movie20]
+tarr = movie.tsort(tarr)
+for i in range(len(tarr)):
+    print(tarr[i])
+print(movie1)
