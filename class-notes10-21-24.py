@@ -112,7 +112,7 @@ class Guppy(Fish):
 
 store = PetStore(1)
 store.add_pet(Turtle("Shelly"))
-store.add_pet(Cat("Joe"))
+store.add_pet(Cat("Joe", "bird"))
 store.add_pet(Turtle("Flash"))
 store.add_pet(Snake("Robin"))
 
