@@ -1,8 +1,7 @@
-class order:
+class Order:
     def __init__(self):
 
-        self.order_list=order_list
-        order_list=[]
+        self.order_list=[]
 
     def add_item(self, order_list):
         self.order_list.append(order_list)
