@@ -1,7 +1,12 @@
 class order:
-    def __init__(self,order=[]):
-        self.order=order
-    def 
+    def __init__(self):
+
+        self.order_list=order_list
+        order_list=[]
+
+    def add_item(self, order_list):
+        self.order_list.append(order_list)
+
 class DesserItems:
     def __init__(self,name):
         self.name = name
