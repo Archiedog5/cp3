@@ -1,10 +1,10 @@
 class Order:
-    def __init__(self):
+    def __init__(self, Order_list):
 
-        self.order_list=[]
+        self.Order_list=Order_list
 
     def add_item(self, order_list):
-        self.order_list.append(order_list)
+        self.Order_list.append(order_list)
 
 class DesserItems:
     def __init__(self,name):
