@@ -1,10 +1,3 @@
-class Order:
-    def __init__(self, Order_list):
-
-        self.Order_list=Order_list
-
-    def add_item(self, order_list):
-        self.Order_list.append(order_list)
 
 class DesserItems:
     def __init__(self,name):
@@ -31,3 +24,4 @@ class Sundae(IceCream):
         super().__init__(name, scoop_count, price_per_scoop)
         self.topping_name=topping_name
         self.topping_price=topping_price
+
