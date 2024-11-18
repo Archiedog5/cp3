@@ -55,6 +55,7 @@ class Sundae(IceCream):
         self.topping_name=topping_name
         self.topping_price=topping_price
 
-    def calculate_cost(self, candy_weight, price_per_pound):
-        cost = candy_weight*price_per_pound
-        return cost
+    def calculate_cost(self, scoop_count, price_per_scoop, topping_name):
+        cost = scoop_count*price_per_scoop
+        add_on= cost+topping_name
+        return add_on

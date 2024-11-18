@@ -12,12 +12,26 @@ class Order:
 
     def add_item(self, order):
         self.Order_list.append(order)
+
     def reper(self):
         item_amount=0
         for item in self.Order_list:
             print(item)
             item_amount+=1
         print("There is",(item_amount), "items in your order list.")
+    
+    def order_cost(self):
+        total=0
+        for item in self.Order_list:
+            total+=item.calculate_cost()
+        return total
+    
+    def order_tax(self,total):
+        tax=total*0.075
+        absolute_cost=tax+total
+        return absolute_cost
+    
+
 def main():
     order1 = Order()
     order1.add_item(Candy("Candy Corn", 1.5, .25))
