@@ -22,5 +22,15 @@ class Ghost(Monster):
         super().__init__(name, place_of_orgin, method_of_attack)
         self.danger_level=danger_level
 
-class Frankienstine(Monster):
-    pass
+class Abomination(Monster):
+    def __init__(self, name, place_of_orgin, method_of_attack, height):
+        super().__init__(name, place_of_orgin, method_of_attack)
+        self.height=height
+
+dracula = Vampire("Druacula", "Romania", "Transylvania", "Blood sucking", "50 mph", "200 miles")
+
+walking_dead = Zombie("Walking Dead", "Detroit", "Biting and scratching", "162 psi", "Walker", "1 mph")
+
+casper = Ghost("Casper", "Whipstaff Manor", "Nothing", "Wouldn't hurt a flie")
+
+frankenstein = Abomination("Frankenstein", "Switzerland", "punching", "8 feet tall")
