@@ -10,11 +10,12 @@ class DesserItems(ABC):
     
     @abstractmethod
     def calculate_cost(self):
-        return 0
+        pass
 
     @abstractmethod
     def calculate_tax(self):
-        return 0
+        tax=self.calculate_cost()*self.tax_precent
+        return tax
 
 class Candy(DesserItems):
 

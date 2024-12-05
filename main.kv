@@ -1,0 +1,79 @@
+ScreenManager:
+    id: screen_manager
+    transition: NoTransition()
+    
+
+    Screen:
+        name: 'Home_screen'
+
+        Button:
+            text: 'Go to settings'
+            on_press: screen_manager.current = 'settings-screen'
+
+FloatLayout:
+    Button:
+        "top left"
+        size_hint: 0.2, 0.1
+        pos_hint: {'x':0.4, 'y':0.45}
+
+
+
+GridLayout:
+    cols:3
+
+    Button:
+        text:'1'
+    Button:
+        text:'2'
+    Button:
+        text:'3'
+    Button:
+        text:'4'
+    Button:
+        text:'5'
+    Button:
+        text:'6'
+    
+
+
+
+BoxLayout:
+    orientation: 'vertical'
+
+    Label:
+        text: 'Enter your name:'
+
+    TextInput:
+        id: user_input
+        hint_text: "Tell me your name"
+        multiline: False
+
+    Button:
+        text: 'Greet'
+        on_press: output_label.text='Hello, '+user_input.text
+
+    Label: 
+        id: output_label
+        text: 'Welcome!'
+
+    CheckBox:
+        id: output_label
+        active: True
+    Label:
+        text: "check me!"
+
+    Slider:
+        min: 0
+        max: 100
+        value: 50
+    Label:
+        text:"Toggle me"
+
+    ProgressBar:
+        max:100
+        value: 75
+
+    Image:
+        source:''
+        allow_strech: True
+        keep_ration: Ture

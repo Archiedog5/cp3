@@ -2,13 +2,15 @@ from Dessert_shop import(
     Candy,
     Cookie,
     IceCream,
-    Sundae
+    Sundae,
+    DesserItems
 
 ) 
 
 class Order:
     def __init__(self):
         self.Order_list=[]
+        self.total=0
 
     def add_item(self, order):
         self.Order_list.append(order)
@@ -19,17 +21,16 @@ class Order:
             print(item)
             item_amount+=1
         print("There is",(item_amount), "items in your order list.")
+        return item_amount
     
     def order_cost(self):
-        total=0
         for item in self.Order_list:
-            total+=item.calculate_cost()
-        return total
+            self.total+=item.calculate_cost()
+        return self.total
     
-    def order_tax(self,total):
-        tax=total*0.075
-        absolute_cost=tax+total
-        return absolute_cost
+    def order_tax(self):
+        tax=self.total.calculate_tax()
+        return tax
     
 
 def main():
@@ -41,4 +42,7 @@ def main():
     order1.add_item(Sundae("Vanilla", 3, .69, "Hot Fudge", 1.29))
     order1.add_item(Cookie("Oatmeal Raisin", 2, 3.45))
     order1.reper()
+    x=order1.reper()
+    for i in range(x):
+        print('dum')
 main()

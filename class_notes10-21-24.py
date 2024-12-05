@@ -109,8 +109,10 @@ class Koi(Fish):
 class Guppy(Fish):
     diet = "flakes"
 
-
+print(dir.Turtle)
 store = PetStore(1)
+shelly = Turtle("Shelly")
+store.add_pet(shelly)
 store.add_pet(Turtle("Shelly"))
 store.add_pet(Cat("Joe", "bird"))
 store.add_pet(Turtle("Flash"))
