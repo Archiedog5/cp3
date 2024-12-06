@@ -1,11 +1,10 @@
-from dessert import Order 
-from reportlab.platypus import SimpleDocTemplate, Table, Paragraph, TableStyle 
-from reportlab.lib import colors 
-from reportlab.lib.pagesizes import A4 
-from reportlab.lib.styles import getSampleStyleSheet 
-
-
-def make_receipt(data, out_file_name):
+# imports module 
+def make_receipt():
+    from reportlab.platypus import SimpleDocTemplate, Table, Paragraph, TableStyle 
+    from reportlab.lib import colors 
+    from reportlab.lib.pagesizes import A4 
+    from reportlab.lib.styles import getSampleStyleSheet 
+    
     # data which we are going to display as tables 
     DATA = [ 
         [ "Date" , "Name", "Subscription", "Price (Rs.)" ], 

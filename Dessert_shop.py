@@ -1,5 +1,5 @@
+from receipt import make_receipt
 from dessert import(
-    Order,
     Candy,
     Cookie,
     IceCream,
@@ -8,6 +8,30 @@ from dessert import(
 
 ) 
 
+class Order:
+    def __init__(self):
+        self.Order_list=[]
+        self.total=0
+
+    def add_item(self, order):
+        self.Order_list.append(order)
+
+    def reper(self):
+        item_amount=0
+        for item in self.Order_list:
+            print(item)
+            item_amount+=1
+        print("There is",(item_amount), "items in your order list.")
+        return item_amount
+    
+    def order_cost(self):
+        for item in self.Order_list:
+            self.total+=item.calculate_cost()
+        return self.total
+    
+    def order_tax(self):
+        tax=self.total.calculate_tax()
+        return tax
 
     
 
@@ -20,8 +44,17 @@ def main():
     order1.add_item(IceCream("Pistachio", 2, .79))
     order1.add_item(Sundae("Vanilla", 3, .69, "Hot Fudge", 1.29))
     order1.add_item(Cookie("Oatmeal Raisin", 2, 3.45))
-    order1.reper()
     x=order1.reper()
-    for i in range(x):
-        
+    tax_total=0
+    sub_total=0
+    for item in order1.Order_list:
+        list.append([item.name, round(item.calculate_cost(),2), round(item.calculate_tax(),2)])
+        sub_total+=round(item.calculate_cost(),2)
+        tax_total+=round(item.calculate_tax(),2)
+    grand_total=sub_total+tax_total
+    list.append(['Order Subtotals', sub_total, tax_total])
+    list.append(['Order Total','',grand_total])
+    list.append(['Total items in the order','',x])
+    make_receipt(list, "receipt")
+
 main()

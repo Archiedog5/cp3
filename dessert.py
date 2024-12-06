@@ -1,9 +1,11 @@
 from abc import ABC, abstractmethod 
 
+
+
 class DesserItems(ABC):
     def __init__(self,name):
         self.name = name
-        self.tax_precent=0.75
+        self.tax_precent=7.25
 
     def __str__(self):
         return f"{self.name}"
@@ -14,7 +16,7 @@ class DesserItems(ABC):
 
     
     def calculate_tax(self):
-        tax=self.calculate_cost()*self.tax_precent
+        tax=self.calculate_cost()*self.tax_precent* .01
         return tax
 
 class Candy(DesserItems):
@@ -24,8 +26,8 @@ class Candy(DesserItems):
         self.candy_weight=candy_weight
         self.price_per_pound=price_per_pound
 
-    def calculate_cost(self, candy_weight, price_per_pound):
-        cost = candy_weight*price_per_pound
+    def calculate_cost(self):
+        cost = self.candy_weight*self.price_per_pound
         return cost
     
 class Cookie(DesserItems):
@@ -35,9 +37,9 @@ class Cookie(DesserItems):
         self.cookie_quantity=cookie_quantity
         self.price_per_dozen=price_per_dozen
     
-    def calculate_cost(self, cookie_quantity, price_per_dozen):
-        cookie_dozen = cookie_quantity/12
-        cost = cookie_dozen*price_per_dozen
+    def calculate_cost(self):
+        cookie_dozen = self.cookie_quantity/12
+        cost = cookie_dozen*self.price_per_dozen
         return cost
 
 class IceCream(DesserItems):
@@ -46,8 +48,8 @@ class IceCream(DesserItems):
         self.scoop_count=scoop_count
         self.price_per_scoop=price_per_scoop
 
-    def calculate_cost(self, scoop_count, price_per_scoop):
-        cost = scoop_count*price_per_scoop
+    def calculate_cost(self):
+        cost = self.scoop_count*self.price_per_scoop
         return cost
 
 class Sundae(IceCream):
@@ -56,32 +58,8 @@ class Sundae(IceCream):
         self.topping_name=topping_name
         self.topping_price=topping_price
 
-    def calculate_cost(self, scoop_count, price_per_scoop, topping_name):
-        cost = scoop_count*price_per_scoop
-        add_on= cost+topping_name
+    def calculate_cost(self):
+        cost = self.scoop_count*self.price_per_scoop
+        add_on= cost+self.topping_price
         return add_on
     
-class Order:
-    def __init__(self):
-        self.Order_list=[]
-        self.total=0
-
-    def add_item(self, order):
-        self.Order_list.append(order)
-
-    def reper(self):
-        item_amount=0
-        for item in self.Order_list:
-            print(item)
-            item_amount+=1
-        print("There is",(item_amount), "items in your order list.")
-        return item_amount
-    
-    def order_cost(self):
-        for item in self.Order_list:
-            self.total+=item.calculate_cost()
-        return self.total
-    
-    def order_tax(self):
-        tax=self.total.calculate_tax()
-        return tax
